@@ -9,7 +9,7 @@ const app = express();
 const port = args.port ? args.port : 5000;
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get('/app/', (req, res) => {
     res.status(200);
@@ -23,6 +23,15 @@ app.get('/app/rps/', (req, res) => {
 app.get('/app/rpsls/', (req, res) => {
     res.send(rpsls.rpsls());
 });
+
+app.get('/app/rps/play/', (req, res) => {
+    res.send(rpsls.rps(req.query.shot))
+});
+
+app.get('/app/rpsls/play/', (req, res) => {
+    res.send(rpsls.rpsls(req.query.shot))
+});
+
 
 app.post('/app/rps/play/', (req, res) => {
     res.send(rpsls.rps(req.body.shot));
