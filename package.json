@@ -1,0 +1,23 @@
+{
+  "name": "express-rps",
+  "version": "1.0.0",
+  "description": "RPS/RPSLS with Express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/comp426-2023-spring/a04-kpwhit.git"
+  },
+  "author": "kpwhit",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/comp426-2023-spring/a04-kpwhit/issues"
+  },
+  "type": "module",
+  "homepage": "https://github.com/comp426-2023-spring/a04-kpwhit#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
