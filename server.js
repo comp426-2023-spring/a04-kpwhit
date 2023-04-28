@@ -9,7 +9,7 @@ const port = args.port ? args.port : 5000;
 
 app.get('/app/', (req, res) => {
     res.status(200);
-    res.send('OK');
+    res.send('200 OK');
 })
 
 
