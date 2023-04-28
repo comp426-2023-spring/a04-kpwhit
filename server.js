@@ -1,13 +1,25 @@
-import minimist from "minimist";
-import rpsls, { rps } from "./a03-kpwhit/lib/rpsls.js"
+const express = require('express');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const minimist = require('minimist');
+const args = minimist(process.argv.slice(2));
 
-async function main() {
-    const args = minimist(process.argv.slice(2));
-    if (!args.port) {
-        args.port = 5000;
-        console.log(rpsls)
-    }
-    console.log(args.port)
-}
+const app = express();
+const port = args.port ? args.port : 5000;
 
-main()
+app.get('/app/', (req, res) => {
+    res.status(200);
+    res.send('OK');
+})
+
+
+
+
+
+// All other (invalid) routes here
+app.get('*', (req, res) => {
+    res.status(404);
+    res.send('404 NOT FOUND');
+})
+
+app.listen(port, () => console.log(`Listening on port ${port}!`));
